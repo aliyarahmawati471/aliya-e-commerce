@@ -1,179 +1,158 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Online</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuketKu</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
 
-        body {
-            background: #f5f5f5;
-        }
+body{
+    background:#fafafa;
+}
 
-        /* HEADER */
-        header {
-            background: #fff;
-            padding: 15px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+/* HEADER */
+header{
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
 
-        header h2 {
-            color: #222;
-        }
+header h1{
+    color:#e91e63;
+}
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #444;
-            font-weight: 500;
-        }
+nav a{
+    margin:0 10px;
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
 
-        nav a:hover {
-            color: #ff4d4d;
-        }
+nav a:hover{
+    color:#e91e63;
+}
 
-        /* HERO */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 7%;
-            background: #ffeaea;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px;
+    background:#fde4ec;
+    flex-wrap:wrap;
+}
 
-        .hero-text {
-            max-width: 500px;
-        }
+.hero-text{
+    max-width:500px;
+}
 
-        .hero-text h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+.hero button{
+    padding:10px 20px;
+    background:#e91e63;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
 
-        .hero-text p {
-            color: #555;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
+.hero img{
+    width:320px;
+    border-radius:10px;
+}
 
-        .hero-text button {
-            padding: 12px 25px;
-            border: none;
-            background: #222;
-            color: #fff;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+/* PRODUK */
+.products{
+    padding:40px;
+    text-align:center;
+}
 
-        .hero-text button:hover {
-            background: #ff4d4d;
-        }
+.products h2{
+    margin-bottom:10px;
+}
 
-        .hero img {
-            width: 380px;
-            max-width: 100%;
-        }
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
 
-        /* PRODUK */
-        .produk {
-            padding: 50px 7%;
-        }
+.product{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
 
-        .produk h2 {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.product:hover{
+    transform:translateY(-5px);
+}
 
-        .produk-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-        }
+.product img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
 
-        .card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.product h3{
+    margin:10px 0;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.product p{
+    color:#e91e63;
+    font-weight:bold;
+}
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+.product button{
+    margin-top:10px;
+    background:#e91e63;
+    color:white;
+    border:none;
+    padding:8px;
+    border-radius:5px;
+    width:100%;
+    cursor:pointer;
+}
 
-        .card h3 {
-            margin: 12px 0 5px;
-        }
+/* FOOTER */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
 
-        .card p {
-            color: #ff4d4d;
-            font-weight: bold;
-        }
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
 
-        .card button {
-            margin-top: 10px;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            background: #222;
-            color: #fff;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .card button:hover {
-            background: #ff4d4d;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 25px;
-            margin-top: 50px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 30px;
-            }
-        }
-    </style>
+    .hero img{
+        margin-top:20px;
+        width:100%;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h2>TokoKu.</h2>
+    <h1>BuketKu</h1>
     <nav>
         <a href="#">Home</a>
         <a href="#">Produk</a>
@@ -184,64 +163,60 @@
 
 <main>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Selamat Datang di Toko Online</h1>
-            <p>Belanja berbagai kebutuhan mulai dari elektronik hingga aksesoris dengan kualitas terbaik.</p>
-            <button>Belanja Sekarang</button>
-        </div>
-        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03" alt="Produk elektronik">
-    </section>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Selamat Datang di Toko Buket</h2>
+        <p>Buket cantik untuk semua momen spesial</p>
+        <button>Belanja Sekarang</button>
+    </div>
 
-    <!-- PRODUK -->
-    <section class="produk">
-        <h2>Produk Unggulan</h2>
+    <!-- GANTI GAMBAR HERO -->
+    <img src="image1.jpg" alt="Buket">
+</section>
 
-        <div class="produk-container">
+<!-- PRODUK -->
+<section class="products">
+<h2>Produk Unggulan</h2>
 
-            <!-- Laptop -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Laptop">
+<div class="product-grid">
 
-                <h3>Laptop</h3>
-                <p>Rp 8.000.000</p>
-                <button>Tambah ke Keranjang</button>
-            </div>
+<div class="product">
+    <img src="image1.jpg">
+    <h3>Buket Mawar</h3>
+    <p>Rp 150.000</p>
+    <button>Tambah ke Keranjang</button>
+</div>
 
-            <!-- Headphone -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="Smartphone">
+<div class="product">
+    <img src="image2.jpg">
+    <h3>Buket Wisuda</h3>
+    <p>Rp 200.000</p>
+    <button>Tambah ke Keranjang</button>
+</div>
 
-                <h3>Headphone</h3>
-                <p>Rp 3.500.000</p>
-                <button>Tambah ke Keranjang</button>
-            </div>
+<div class="product">
+    <img src="image3.jpg">
+    <h3>Buket Uang</h3>
+    <p>Rp 250.000</p>
+    <button>Tambah ke Keranjang</button>
+</div>
 
-            <!-- PC -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b" alt="Headphone">
-                <h3>PC</h3>
-                <p>Rp 7.500.000</p>
-                <button>Tambah ke Keranjang</button>
-            </div>
+<div class="product">
+    <img src="image4.jpg">
+    <h3>Buket Snack</h3>
+    <p>Rp 180.000</p>
+    <button>Tambah ke Keranjang</button>
+</div>
 
-            <!-- Jam Tangan -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49" alt="Jam tangan">
-                <h3>Jam Tangan</h3>
-                <p>Rp 500.000</p>
-                <button>Tambah ke Keranjang</button>
-            </div>
-
-        </div>
-    </section>
+</div>
+</section>
 
 </main>
 
 <footer>
-    <p>Kontak: tokoku@email.com | 0812-3456-7890</p>
-    <p>© 2026 TokoKu. AR .</p>
+<p>Kontak: 0812-3456-7890</p>
+<p>&copy; 2026 BuketKu</p>
 </footer>
 
 </body>
